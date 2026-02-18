@@ -10,7 +10,17 @@ require 'configuration/IpseityAthenaeumConfiguration.php';
 require 'widget/IpseityAthenaeumPageWidget.php';
 
 $configuration = new IpseityAthenaeumConfiguration();
-$layoutLista = $configuration->configurarLayout();
+
+$status = $_GET['status'] ?? null;
+$layout = $_GET['layout'] ?? null;
+
+if ($status) {
+    $layoutLista = $configuration->filtrarPorStatus($status);
+} elseif ($layout) {
+    $layoutLista = $configuration->filtrarPorBusca($layout);
+} else {
+    $layoutLista = $configuration->configurarLayout();
+}
 
 $page = new IpseityAthenaeumPageWidget();
 $page->page($layoutLista);

@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 body {

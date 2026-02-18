@@ -43,13 +43,13 @@ class IpseityAthenaeumConfiguration {
         // verde    - 2 = fazendo
         // amarelo  - 3 = atrasado
         // azul     - 4 = concluido
-        // branco   - 5 = indefinido
+        // cinza    - 5 = indefinido
 
         $layouts = [
 
             'accordion' => [
                 'id' => 1,
-                'url' => 'accordion',
+                'url' => 'accordion-layout',
                 'nome' => 'accordion',
                 'categoria' => 'layout',
                 'publicar' => 1,
@@ -58,14 +58,79 @@ class IpseityAthenaeumConfiguration {
 
             'alert' => [
                 'id' => 2,
-                'url' => 'alert',
+                'url' => 'alert-layout',
                 'nome' => 'alert',
                 'categoria' => 'layout',
                 'publicar' => 1,
                 'status' => 2,
             ],
+
+            'banner' => [
+                'id' => 3,
+                'url' => 'banner-layout',
+                'nome' => 'banner',
+                'categoria' => 'layout',
+                'publicar' => 1,
+                'status' => 1,
+            ],
         ];
 
         return $layouts;
     }
+
+    function filtrarPorStatus($status)
+    {
+        $mapStatus = [
+            'cancelado'   => 1,
+            'fazendo'     => 2,
+            'atrasado'    => 3,
+            'concluido'   => 4,
+            'indefinido'  => 5,
+        ];
+
+        $status = strtolower($status);
+
+        if (!isset($mapStatus[$status])) {
+            return []; // retorna vazio se status inválido
+        }
+
+        $statusNumero = $mapStatus[$status];
+
+        // Pega todos os layouts
+        $layouts = $this->configurarLayout();
+
+        // Filtra pelo status
+        $filtrados = array_filter($layouts, function($item) use ($statusNumero) {
+            return $item['status'] == $statusNumero;
+        });
+
+        return $filtrados;
+    }
+
+    function filtrarPorBusca($busca)
+    {
+        $busca = strtolower(trim($busca));
+
+        // Se busca vazia, retorna todos
+        if (empty($busca)) {
+            return $this->configurarLayout();
+        }
+
+        $layouts = $this->configurarLayout();
+
+        $filtrados = array_filter($layouts, function($item) use ($busca) {
+
+            // Ignora não publicados
+            if ($item['publicar'] == 0) {
+                return false;
+            }
+
+            // Busca parcial no nome
+            return strpos(strtolower($item['nome']), $busca) !== false;
+        });
+
+        return $filtrados;
+    }
+
+
 }

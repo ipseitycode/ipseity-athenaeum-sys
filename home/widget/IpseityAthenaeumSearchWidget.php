@@ -1,3 +1,7 @@
+<?php
+$layoutValue = $_GET['layout'] ?? null;
+?>
+
 <div class="search-widget">
     <div class="search-widget__area">
 
@@ -28,8 +32,14 @@
                 class="search-widget__search_input" 
                 type="text" 
                 name="layout" 
-                id="search-hidden-input" 
-                placeholder="Buscar Layout">
+                id="search-hidden-input"
+
+                <?php if (!empty($layoutValue)): ?>
+                    value="<?= htmlspecialchars($layoutValue) ?>"
+                <?php else: ?>
+                    placeholder="Buscar Layout"
+                <?php endif; ?>
+                >
 
                 <button class="search-widget__search_button" type="submit">
                     <img 
