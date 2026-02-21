@@ -1,0 +1,106 @@
+<body>
+    <div class="container">
+        <h2>Cadastro</h2>
+        <form id="form">
+
+            <div class="input-group">
+                <input type="text" id="nome" placeholder="Nome completo">
+                <div class="error" id="erroNome"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email">
+                <div class="error" id="erroEmail"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="senha" placeholder="Senha">
+                <span class="toggle-password" onclick="toggleSenha()">Mostrar</span>
+                <div class="password-strength" id="strengthBar"></div>
+            </div>
+
+            <div class="input-group">
+                <select id="cargo">
+                    <option value="">Selecione um cargo</option>
+                    <option>Desenvolvedor</option>
+                    <option>Designer</option>
+                    <option>Analista</option>
+                </select>
+                <div class="error" id="erroCargo"></div>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <div class="success-modal" id="modal">
+        <div class="success-content">
+            <h3>Cadastro realizado com sucesso! 🎉</h3>
+            <br>
+            <button onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("form");
+        const nome = document.getElementById("nome");
+        const email = document.getElementById("email");
+        const senha = document.getElementById("senha");
+        const cargo = document.getElementById("cargo");
+        const strengthBar = document.getElementById("strengthBar");
+
+        function toggleSenha() {
+            senha.type = senha.type === "password" ? "text" : "password";
+        }
+
+        senha.addEventListener("input", () => {
+            const valor = senha.value;
+            let força = 0;
+
+            if (valor.length >= 6) força++;
+            if (/[A-Z]/.test(valor)) força++;
+            if (/[0-9]/.test(valor)) força++;
+            if (/[^A-Za-z0-9]/.test(valor)) força++;
+
+            const cores = ["red", "orange", "gold", "green"];
+            strengthBar.style.width = (força * 25) + "%";
+            strengthBar.style.background = cores[força - 1] || "transparent";
+        });
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            let valido = true;
+
+            if (nome.value.length < 3) {
+                document.getElementById("erroNome").innerText = "Nome inválido";
+                valido = false;
+            } else {
+                document.getElementById("erroNome").innerText = "";
+            }
+
+            if (!email.value.includes("@")) {
+                document.getElementById("erroEmail").innerText = "Email inválido";
+                valido = false;
+            } else {
+                document.getElementById("erroEmail").innerText = "";
+            }
+
+            if (cargo.value === "") {
+                document.getElementById("erroCargo").innerText = "Selecione um cargo";
+                valido = false;
+            } else {
+                document.getElementById("erroCargo").innerText = "";
+            }
+
+            if (valido) {
+                document.getElementById("modal").style.display = "flex";
+                form.reset();
+                strengthBar.style.width = "0";
+            }
+        });
+
+        function fecharModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>

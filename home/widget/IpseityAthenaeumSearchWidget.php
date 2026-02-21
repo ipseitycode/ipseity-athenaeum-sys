@@ -18,14 +18,14 @@ $layoutValue = $_GET['layout'] ?? null;
 
         <div class="search-widget__logo">
             <div class="search-widget__logo_text">
-                MEGA-ATHENAEUM-SYS
+                IPSEITY-ATHENAEUM-SYS
             </div>
         </div>  
 
         <div class="search-widget__search">
             <form 
             class="search-widget__search_bar" 
-            action="" 
+            action="https://busqe.com/sites-dev/labs/ipseitystudios/sistemas/ipseity-athenaeum-sys/home/" 
             method="GET">
 
                 <input 
