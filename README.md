@@ -2,6 +2,10 @@
 
 [![Playlist YouTube - ipseity-athenaeum-sys](https://img.youtube.com/vi/NJtmT0ITnPI/maxresdefault.jpg)](https://youtube.com/playlist?list=PLz9bzqrAthDmzypbgYuG70aHP5nWx-4pR&si=HjxvEIG3udPVQr4B)
 
+## 🏛️ Por que “ATHENAEUM”?
+
+Athenaeum remete aos espaços da Grécia Antiga dedicados ao conhecimento, organização e construção estruturada de ideias; o ipseity-athenaeum-sys carrega esse conceito ao aplicar método, padronização e engenharia rigorosa na criação de layouts; não é apenas geração de código, é organização consciente de interface, com regras claras, hierarquia definida e consistência arquitetural.
+
 ## 📋 Descrição
 
 IPSEITY-ATHENAEUM-SYS é uma biblioteca de engenharia de layouts baseada em geração assistida por IA, utilizando um sistema estruturado de regras (SKILL.md) para garantir padronização absoluta de código.
@@ -16,7 +20,7 @@ O projeto combina:
 
 O objetivo é transformar imagens ou descrições visuais em layouts profissionais, mantendo controle total sobre padrão, hierarquia e qualidade do código.
 
-## 📋 Tecnologias
+## 🛠️ Tecnologias
 
 - PHP (organização e estrutura do sistema)
 - HTML5 Semântico
