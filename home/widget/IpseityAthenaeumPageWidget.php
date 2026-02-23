@@ -12,15 +12,12 @@ class IpseityAthenaeumPageWidget {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="refresh" content="">
 
-            <!-- <link rel="icon" href="../includes/assets/img/logo/logo-sem-fundo.png" type="image/png"> -->
-
 	        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
             <link rel="stylesheet" type="text/css" href="assets/css/style.css?<?=time() ?>">
             <link rel="stylesheet" type="text/css" href="assets/css/IpseityAthenaeumSearchStyle.css?<?=time() ?>">
             <link rel="stylesheet" type="text/css" href="assets/css/IpseityAthenaeumBridgecardStyle.css?<?=time() ?>">
 
-            <!-- <script type="text/javascript" src="../assets/js/ConsoleBackendSidebarScript.js"></script> -->
             <title>HOME</title>
         </head>
         <body> 
