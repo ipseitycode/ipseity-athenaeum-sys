@@ -9,6 +9,34 @@ AVISO IMPORTANTE (REGRA ABSOLUTA)
 - Saída final = somente os arquivos de código solicitados (HTML/CSS) e nada mais.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+## 0. PRÉ-EXECUÇÃO AUTOMÁTICA (OBRIGATÓRIO)
+
+Antes de gerar qualquer código HTML ou CSS:
+
+1. Capturar o valor de `[name]` definido no prompt.
+2. Executar o seguinte comando no terminal:
+
+    php home/scripts/template-layout-script.php [name]
+
+3. Aguardar finalização.
+4. Somente continuar se o retorno for sucesso.
+
+Se o script falhar:
+
+- NÃO gerar nenhum código.
+- NÃO criar arquivos.
+- NÃO gerar scripts auxiliares (.py, .js, etc).
+- NÃO tentar automatizar a criação de estrutura por conta própria.
+- NÃO simular execução.
+- NÃO assumir sucesso.
+
+A ausência de confirmação explícita de sucesso deve ser tratada como falha crítica.
+
+Nunca criar manualmente a estrutura.
+Sempre usar o script oficial.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 ## 1. PAPEL DO AGENTE
 Você é um engenheiro de layout responsável por gerar os arquivos da biblioteca `ipseity-athenaeum-sys` conforme estas regras.  
 Seu objetivo: produzir HTML e CSS prontos para uso, exatamente nos caminhos e com a nomenclatura exigida.
@@ -33,27 +61,25 @@ Seu objetivo: produzir HTML e CSS prontos para uso, exatamente nos caminhos e co
 
 Formato geral de classe base (PAI):
 
-    [name]-widget-[format]-[size]
+    [name]-widget
 
 onde:
 - `[name]` = nome do layout (single word, ex: `device`, `accordion`)
-- `[format]` = `square` | `bridge` | `tower`
-- `[size]` = `small` | `medium` | `large`
 
 Seletor de elementos internos:
 
-    [name]-widget-[format]-[size]__[element]
+    [name]-widget__[element]
 
 (observe os dois underlines `__` separando a parte estrutural do elemento)
 
 Exemplos concretos (para `device`):
-- `device-widget-square-small`
-- `device-widget-square-small__area`
-- `device-widget-square-small__header`
-- `device-widget-square-small__title`
-- `device-widget-square-small__body`
-- `device-widget-square-small__footer`
-- `device-widget-square-small__button`
+- `device-widget`
+- `device-widget__area`
+- `device-widget__header`
+- `device-widget__title`
+- `device-widget__body`
+- `device-widget__footer`
+- `device-widget__button`
 
 **Proibições**:
 - Não usar classes fora do padrão acima.
@@ -78,15 +104,11 @@ Você deve APENAS escrever o código dentro dos seguintes arquivos já existente
 
 HTML:
 
-[name]-layout/assets/html/ipseity-[name]-square.html
-[name]-layout/assets/html/ipseity-[name]-bridge.html
-[name]-layout/assets/html/ipseity-[name]-tower.html
+[name]-layout/assets/html/ipseity-[name].html
 
 CSS:
 
-[name]-layout/assets/css/ipseity-[name]-square.css
-[name]-layout/assets/css/ipseity-[name]-bridge.css
-[name]-layout/assets/css/ipseity-[name]-tower.css
+[name]-layout/assets/css/ipseity-[name].css
 
 Se qualquer um desses arquivos não existir, interrompa a geração.
 
@@ -97,23 +119,20 @@ Nunca modifique arquivos fora dessa lista.
 
 ## 5. CONTEÚDO DOS ARQUIVOS HTML (regra fixa)
 
-- Cada arquivo HTML é um *fragmento* contendo **apenas** 3 blocos `<section>` (sem `<html>`, `<head>`, `<body>`, `<meta>`, etc). Nada mais.  
-- Ordem obrigatória dentro do arquivo: **small**, **medium**, **large** (nesta sequência).  
+- O arquivo HTML é um *fragmento* contendo **apenas** 1 bloco `<section>` (sem `<html>`, `<head>`, `<body>`, `<meta>`, etc). Nada mais.  
 - Estrutura mínima por bloco (exemplo, adaptar elementos conforme o layout real extraído da imagem):
 
-    <section class="[name]-widget-[format]-small" aria-labelledby="[name]-title">
-      <div class="[name]-widget-[format]-small__area">
-        <header class="[name]-widget-[format]-small__header">
-          <h2 id="[name]-title" class="[name]-widget-[format]-small__title">...</h2>
+    <section class="[name]-widget" aria-labelledby="[name]-title">
+      <div class="[name]-widget__area">
+        <header class="[name]-widget__header">
+          <h2 id="[name]-title" class="[name]-widget__title">...</h2>
         </header>
-        <article class="[name]-widget-[format]-small__body">...</article>
-        <footer class="[name]-widget-[format]-small__footer">
-          <button class="[name]-widget-[format]-small__button">...</button>
+        <article class="[name]-widget__body">...</article>
+        <footer class="[name]-widget__footer">
+          <button class="[name]-widget__button">...</button>
         </footer>
       </div>
     </section>
-
-Repetir estrutura equivalente para `-medium` e `-large` no mesmo arquivo.
 
 - Use tags semânticas adequadas conforme o conteúdo.
 - Não inserir comentários.
@@ -124,12 +143,9 @@ Repetir estrutura equivalente para `-medium` e `-large` no mesmo arquivo.
 
 ## 6. CONTEÚDO DOS ARQUIVOS CSS (regra fixa)
 
-Cada arquivo CSS corresponde a um formato (`square` / `bridge` / `tower`).
+- Declare os seletores base (seguindo a ordem de aparecimento no HTML), em seguida declare as media queries específicas, seguindo a ordem fixa de media queries.
 
-- Ordem obrigatória no arquivo: `small` → `medium` → `large` (exatamente nesta ordem).
-- Para cada tamanho, primeiro declare os seletores base naquele tamanho (seguindo a ordem de aparecimento no HTML), em seguida declarar as media queries específicas para aquele tamanho, seguindo a ordem fixa de media queries.
-
-Media queries obrigatórias e na ordem abaixo para CADA bloco (small/medium/large):
+Media queries obrigatórias e na ordem abaixo:
 
 1. Base (sem media query) — estilos de desktop.
 2. `@media (max-width: 1152px)` — ajustes iniciais (desktop → tablet).
@@ -137,32 +153,20 @@ Media queries obrigatórias e na ordem abaixo para CADA bloco (small/medium/larg
 
 Exemplo de estrutura do arquivo (sem comentários — em produção, escreva sem comentários):
 
-    .device-widget-square-small { display: flex; ... }
-    .device-widget-square-small__area { display: flex; flex-direction: column; ... }
-    .device-widget-square-small__header { display: flex; ... }
-    .device-widget-square-small__title { ... }
+    .device-widget { display: flex; ... }
+    .device-widget__area { display: flex; flex-direction: column; ... }
+    .device-widget__header { display: flex; ... }
+    .device-widget__title { ... }
 
     @media (max-width: 1152px) {
-      .device-widget-square-small { ... }
-      .device-widget-square-small__area { ... }
+      .device-widget { ... }
+      .device-widget__area { ... }
     }
 
     @media (max-width: 832px) {
-      .device-widget-square-small { ... }
-      .device-widget-square-small__area { ... }
+      .device-widget { ... }
+      .device-widget__area { ... }
     }
-
-    .device-widget-square-medium { display: flex; ... }
-    .device-widget-square-medium__area { ... }
-
-    @media (max-width: 1152px) { ... }
-    @media (max-width: 832px) { ... }
-
-    .device-widget-square-large { display: flex; ... }
-    .device-widget-square-large__area { ... }
-
-    @media (max-width: 1152px) { ... }
-    @media (max-width: 832px) { ... }
 
 Pontos críticos:
 - Em todos os seletores estruturais, `display: flex` deve ser usado (ou aplicado a um contêiner que organiza os filhos).
@@ -173,23 +177,10 @@ Pontos críticos:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-## 7. FORMATO / TAMANHOS (semântica de comportamento)
-
-- **square**: compact, proporcional, pensado para grids; estrutura equilibrada.
-- **bridge**: distribuição horizontal, blocos laterais possíveis; ideal para largura expansiva.
-- **tower**: empilhamento vertical, focado em leitura sequencial.
-
-`small` / `medium` / `large` são variações visuais do mesmo formato (modificam gap, padding, font-size, dimensões).
-
-A geração deve adaptar a estrutura visual da imagem mantendo a coerência com estas descrições.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 ## 8. CORES
 
 - A cor base do layout deve ser extraída da imagem sempre que houver imagem.
 - Se a cor for fornecida na descrição pelo usuario, use a cor fornecida.
-- As cores aplicadas devem ficar restritas às classes do widget (por exemplo, `.device-widget-square-small__title { color: #... }`).
 - Não criar variáveis ou temas globais.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -210,11 +201,11 @@ A geração deve adaptar a estrutura visual da imagem mantendo a coerência com 
 Para cada layout gerado, verifique todos os itens abaixo:
 
 - [ ] Nomes dos arquivos corretos e nos caminhos exatos.
-- [ ] Cada arquivo HTML contém somente 3 `<section>` (small → medium → large) e nada mais.
-- [ ] Todas as classes seguem o padrão `[name]-widget-[format]-[size]__[element]`.
+- [ ] O arquivo HTML contém somente 1 `<section>` e nada mais.
+- [ ] Todas as classes seguem o padrão `[name]-widget__[element]`.
 - [ ] Não há comentários nos arquivos gerados.
 - [ ] Não há uso de `grid`, `float`, `table`, `inline-block` para layout (apenas `display: flex`).
-- [ ] Cada arquivo CSS segue a ordem: small (base + @media 1152 + @media 832), medium (base + media), large (base + media).
+- [ ] Cada arquivo CSS segue a ordem: (base + @media 1152 + @media 832).
 - [ ] As media queries existem e estão na ordem correta.
 - [ ] Não há `!important`.
 - [ ] Nenhum seletor afeta elementos externos.
@@ -236,27 +227,14 @@ Para cada arquivo, na ordem:
 
 Exemplo (formato exato que o agente deve seguir na saída textual):
 
-    [nome]-layout/assets/html/ipseity-[nome]-square.html
+    [nome]-layout/assets/html/ipseity-[nome].html
     <conteúdo do arquivo em bloco de código>
 
-    [nome]-layout/assets/css/ipseity-[nome]-square.css
-    <conteúdo do arquivo em bloco de código>
-
-    [nome]-layout/assets/html/ipseity-[nome]-bridge.html
-    <conteúdo do arquivo em bloco de código>
-
-    [nome]-layout/assets/css/ipseity-[nome]-bridge.css
-    <conteúdo do arquivo em bloco de código>
-
-    [nome]-layout/assets/html/ipseity-[nome]-tower.html
-    <conteúdo do arquivo em bloco de código>
-
-    [nome]-layout/assets/css/ipseity-[nome]-tower.css
+    [nome]-layout/assets/css/ipseity-[nome].css
     <conteúdo do arquivo em bloco de código>
 
 - Não incluir explicação entre os arquivos.
 - Não incluir texto adicional fora dos blocos de arquivo.
-- A ordem dos arquivos na saída pode seguir o padrão acima ou ser agrupada por formato — desde que todos os arquivos existam e cada arquivo seja precedido por seu caminho completo.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -264,91 +242,37 @@ Exemplo (formato exato que o agente deve seguir na saída textual):
 
 Arquivo HTML:
 
-    device-layout/assets/html/ipseity-device-square.html
+    device-layout/assets/html/ipseity-device.html
 
-    <section class="device-widget-square-small" aria-labelledby="device-title-small">
-      <div class="device-widget-square-small__area">
-        <header class="device-widget-square-small__header">
-          <h2 id="device-title-small" class="device-widget-square-small__title">Title</h2>
+    <section class="device-widget" aria-labelledby="device-title">
+      <div class="device-widget__area">
+        <header class="device-widget__header">
+          <h2 id="device-title" class="device-widget__title">Title</h2>
         </header>
-        <article class="device-widget-square-small__body">...</article>
-        <footer class="device-widget-square-small__footer">
-          <button class="device-widget-square-small__button">Action</button>
-        </footer>
-      </div>
-    </section>
-
-    <section class="device-widget-square-medium" aria-labelledby="device-title-medium">
-      <div class="device-widget-square-medium__area">
-        <header class="device-widget-square-medium__header">
-          <h2 id="device-title-medium" class="device-widget-square-medium__title">Title</h2>
-        </header>
-        <article class="device-widget-square-medium__body">...</article>
-        <footer class="device-widget-square-medium__footer">
-          <button class="device-widget-square-medium__button">Action</button>
-        </footer>
-      </div>
-    </section>
-
-    <section class="device-widget-square-large" aria-labelledby="device-title-large">
-      <div class="device-widget-square-large__area">
-        <header class="device-widget-square-large__header">
-          <h2 id="device-title-large" class="device-widget-square-large__title">Title</h2>
-        </header>
-        <article class="device-widget-square-large__body">...</article>
-        <footer class="device-widget-square-large__footer">
-          <button class="device-widget-square-large__button">Action</button>
+        <article class="device-widget__body">...</article>
+        <footer class="device-widget__footer">
+          <button class="device-widget__button">Action</button>
         </footer>
       </div>
     </section>
 
 Arquivo CSS:
 
-    device-layout/assets/css/ipseity-device-square.css
+    device-layout/assets/css/ipseity-device.css
 
-    .device-widget-square-small { display: flex; flex-direction: column; gap: 16px; }
-    .device-widget-square-small__area { display: flex; flex-direction: column; gap: 12px; }
-    .device-widget-square-small__header { display: flex; align-items: center; }
-    .device-widget-square-small__title { font-size: 16px; }
+    .device-widget { display: flex; flex-direction: column; gap: 16px; }
+    .device-widget__area { display: flex; flex-direction: column; gap: 12px; }
+    .device-widget__header { display: flex; align-items: center; }
+    .device-widget__title { font-size: 16px; }
 
     @media (max-width: 1152px) {
-      .device-widget-square-small { gap: 12px; }
-      .device-widget-square-small__title { font-size: 15px; }
+      .device-widget { gap: 12px; }
+      .device-widget__title { font-size: 15px; }
     }
 
     @media (max-width: 832px) {
-      .device-widget-square-small { gap: 8px; }
-      .device-widget-square-small__title { font-size: 14px; }
-    }
-
-    .device-widget-square-medium { display: flex; flex-direction: column; gap: 20px; }
-    .device-widget-square-medium__area { display: flex; flex-direction: column; gap: 16px; }
-    .device-widget-square-medium__header { display: flex; align-items: center; }
-    .device-widget-square-medium__title { font-size: 20px; }
-
-    @media (max-width: 1152px) {
-      .device-widget-square-medium { gap: 16px; }
-      .device-widget-square-medium__title { font-size: 18px; }
-    }
-
-    @media (max-width: 832px) {
-      .device-widget-square-medium { gap: 12px; }
-      .device-widget-square-medium__title { font-size: 16px; }
-    }
-
-    .device-widget-square-large { display: flex; flex-direction: column; gap: 24px; }
-    .device-widget-square-large__area { display: flex; flex-direction: column; gap: 20px; }
-    .device-widget-square-large__header { display: flex; align-items: center; }
-    .device-widget-square-large__title { font-size: 24px; }
-
-    @media (max-width: 1152px) {
-      .device-widget-square-large { gap: 20px; }
-      .device-widget-square-large__title { font-size: 22px; }
-    }
-
-    @media (max-width: 832px) {
-      .device-widget-square-large { gap: 16px; }
-      .device-widget-square-large__title { font-size: 20px; }
+      .device-widget { gap: 8px; }
+      .device-widget__title { font-size: 14px; }
     }
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
