@@ -29,11 +29,11 @@ O objetivo é transformar imagens ou descrições visuais em layouts profissiona
 - 5 - Adicione as informações do layout no método configurarLayout da classe CONFIGURATION
 - 6 - SEJA FELIZ!
 
-## 🛠️ Tecnologias
+## 🛠️ Tecnologias usadas
 
-- PHP (organização e estrutura do sistema)
-- HTML5 Semântico
-- CSS3 (Flexbox obrigatório)
+- PHP (estrutura do sistema)
+- HTML5
+- CSS3
 - Google Antigravity (Agent com Skill personalizada)
 
 ## 🎥 Documentação em Vídeo
@@ -44,7 +44,6 @@ Uma playlist completa no YouTube está disponível explicando detalhadamente:
 - Como usar script bash para gerar a estrutura de pastas base
 - Como configurar a SKILL
 - Como criar layouts a partir de imagem
-- Exemplos práticos reais
 
 **[Acesse a playlist aqui](https://youtube.com/playlist?list=PLz9bzqrAthDmzypbgYuG70aHP5nWx-4pR&si=l8-7HK4brCB9ZbRf)**
 
