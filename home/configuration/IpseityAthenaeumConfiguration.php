@@ -56,32 +56,6 @@ class IpseityAthenaeumConfiguration {
                 'status' => 2,
             ],
 
-            // 'accordion' => [
-            //     'id' => 1,
-            //     'url' => 'accordion-layout',
-            //     'nome' => 'accordion',
-            //     'categoria' => 'layout',
-            //     'publicar' => 1,
-            //     'status' => 2,
-            // ],
-
-            // 'alert' => [
-            //     'id' => 2,
-            //     'url' => 'alert-layout',
-            //     'nome' => 'alert',
-            //     'categoria' => 'layout',
-            //     'publicar' => 1,
-            //     'status' => 2,
-            // ],
-
-            // 'banner' => [
-            //     'id' => 3,
-            //     'url' => 'banner-layout',
-            //     'nome' => 'banner',
-            //     'categoria' => 'layout',
-            //     'publicar' => 1,
-            //     'status' => 1,
-            // ],
         ];
 
         return $layouts;
@@ -100,7 +74,7 @@ class IpseityAthenaeumConfiguration {
         $status = strtolower($status);
 
         if (!isset($mapStatus[$status])) {
-            return []; // retorna vazio se status inválido
+            return []; // retorna vazio se status invalido
         }
 
         $statusNumero = $mapStatus[$status];
@@ -129,7 +103,7 @@ class IpseityAthenaeumConfiguration {
 
         $filtrados = array_filter($layouts, function($item) use ($busca) {
 
-            // Ignora não publicados
+            // Ignora nao publicados
             if ($item['publicar'] == 0) {
                 return false;
             }
