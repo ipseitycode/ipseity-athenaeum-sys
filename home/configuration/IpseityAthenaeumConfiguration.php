@@ -47,32 +47,41 @@ class IpseityAthenaeumConfiguration {
 
         $layouts = [
 
-            'accordion' => [
+            'advantage' => [
                 'id' => 1,
-                'url' => 'accordion-layout',
-                'nome' => 'accordion',
+                'url' => 'advantage-layout',
+                'nome' => 'advantage',
                 'categoria' => 'layout',
                 'publicar' => 1,
                 'status' => 2,
             ],
 
-            'alert' => [
-                'id' => 2,
-                'url' => 'alert-layout',
-                'nome' => 'alert',
-                'categoria' => 'layout',
-                'publicar' => 1,
-                'status' => 2,
-            ],
+            // 'accordion' => [
+            //     'id' => 1,
+            //     'url' => 'accordion-layout',
+            //     'nome' => 'accordion',
+            //     'categoria' => 'layout',
+            //     'publicar' => 1,
+            //     'status' => 2,
+            // ],
 
-            'banner' => [
-                'id' => 3,
-                'url' => 'banner-layout',
-                'nome' => 'banner',
-                'categoria' => 'layout',
-                'publicar' => 1,
-                'status' => 1,
-            ],
+            // 'alert' => [
+            //     'id' => 2,
+            //     'url' => 'alert-layout',
+            //     'nome' => 'alert',
+            //     'categoria' => 'layout',
+            //     'publicar' => 1,
+            //     'status' => 2,
+            // ],
+
+            // 'banner' => [
+            //     'id' => 3,
+            //     'url' => 'banner-layout',
+            //     'nome' => 'banner',
+            //     'categoria' => 'layout',
+            //     'publicar' => 1,
+            //     'status' => 1,
+            // ],
         ];
 
         return $layouts;
