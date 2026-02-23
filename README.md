@@ -22,12 +22,12 @@ O objetivo é transformar imagens ou descrições visuais em layouts profissiona
 
 ## 🚀 Passo a passo sem enrolação
 
-1 - Escolher layout que deseja criar (Tire print)
-2 - Faça uma descrição visual do layout e escolha um nome para o layout
-3 - Crie a estrutura com o script bash
-4 - Envie o prompt com as informações para o antigravity
-5 - Adicione as informações do layout no método configurarLayout da classe CONFIGURATION
-6 - SEJA FELIZ!
+- 1 - Escolher layout que deseja criar (Tire print)
+- 2 - Faça uma descrição visual do layout e escolha um nome para o layout
+- 3 - Crie a estrutura com o script bash
+- 4 - Envie o prompt com as informações para o antigravity
+- 5 - Adicione as informações do layout no método configurarLayout da classe CONFIGURATION
+- 6 - SEJA FELIZ!
 
 ## 🛠️ Tecnologias
 
