@@ -56,6 +56,24 @@ class IpseityAthenaeumConfiguration {
                 'status' => 2,
             ],
 
+            'accordion' => [
+                'id' => 1,
+                'url' => 'accordion-layout',
+                'nome' => 'accordion',
+                'categoria' => 'layout',
+                'publicar' => 1,
+                'status' => 2,
+            ],
+
+            'productgrid' => [
+                'id' => 1,
+                'url' => 'productgrid-layout',
+                'nome' => 'productgrid',
+                'categoria' => 'layout',
+                'publicar' => 1,
+                'status' => 4,
+            ],
+
         ];
 
         return $layouts;
