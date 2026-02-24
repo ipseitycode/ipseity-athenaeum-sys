@@ -48,11 +48,25 @@ body {
     align-items: center;
     justify-content: center;
     padding: 32px 32px;
-    gap: 32px; 
+    gap: 32px;
 }
 
 
 .page__footer {}
+
+@media (max-width: 1152px) {
+
+    .page__body {
+        display: flex;
+        width: auto;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+        gap: 32px;
+    }
+
+}
 
 @media (max-width: 832px) {
 
@@ -78,7 +92,15 @@ body {
 
     .page__header {}
 
-    .page__body {}
+    .page__body {
+        display: flex;
+        width: auto;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 8px;
+        gap: 32px;
+    }
 
 
     .page__footer {}

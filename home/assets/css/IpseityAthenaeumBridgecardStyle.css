@@ -246,7 +246,7 @@
         width: 100%;
         max-width: 1280px;
         height: auto;
-        padding: 16px;
+        padding: 16px 0px;
         gap: 16px;
         overflow: hidden;
         font-family: "Raleway Regular", Arial, sans-serif;
@@ -561,7 +561,7 @@
         width: 100%;
         max-width: 1280px;
         height: auto;
-        padding: 8px;
+        padding: 8px 8px;
         gap: 16px;
         overflow: hidden;
         font-family: "Raleway Regular", Arial, sans-serif;
@@ -580,7 +580,7 @@
         height: auto;
         overflow: hidden;
         gap: 8px;
-        padding: 6px;
+        padding: 0px;
     }
 
     .bridgecard-widget__letter * {
@@ -622,7 +622,7 @@
         align-items: start;
         width: 100%;
         height: auto;
-        padding: 8px;
+        padding: 8px 0px;
         gap: 16px;
         overflow: hidden;
         flex-wrap: nowrap;

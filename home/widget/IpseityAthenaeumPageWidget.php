@@ -16,11 +16,14 @@ class IpseityAthenaeumPageWidget {
 
             <link rel="stylesheet" type="text/css" href="assets/css/style.css?<?=time() ?>">
             <link rel="stylesheet" type="text/css" href="assets/css/IpseityAthenaeumSearchStyle.css?<?=time() ?>">
+            <link rel="stylesheet" type="text/css" href="assets/css/IpseityAthenaeumTabsStyle.css?<?=time() ?>">
             <link rel="stylesheet" type="text/css" href="assets/css/IpseityAthenaeumBridgecardStyle.css?<?=time() ?>">
 
-            <title>HOME</title>
+            <script src="assets/js/IpseityAthenaeumTabsScript.js?v1<?=time() ?>"></script>
+
+            <title>Home</title>
         </head>
-        <body> 
+        <body>
             <div class="page">
                 <div class="page__header">
                 <?
@@ -29,6 +32,7 @@ class IpseityAthenaeumPageWidget {
                 </div>
                 <div class="page__body">
                 <?
+                    $this->tabs($layoutLista);
                     $this->card($layoutLista);
                 ?>
                 </div>
@@ -40,7 +44,7 @@ class IpseityAthenaeumPageWidget {
     <?
     }
 
-    public function card($layoutLista) {
+    public function card($layoutLista) { 
 
         $mapStatus = [
             1 => 'danger',    // cancelado
@@ -113,5 +117,42 @@ class IpseityAthenaeumPageWidget {
         }
     }
 
-
+    public function tabs($layoutLista) { 
+    ?>
+        <nav class="tabs-widget">
+            <ul class="tabs-widget__list">
+                <li class="tabs-widget__item">
+                    <a href="?" class="tabs-widget__link" data-status="todos">
+                        Todos
+                    </a>
+                </li>
+                <li class="tabs-widget__item">
+                    <a href="?status=cancelado" class="tabs-widget__link" data-status="cancelado">
+                        Cancelado
+                    </a>
+                </li>
+                <li class="tabs-widget__item">
+                    <a href="?status=fazendo" class="tabs-widget__link" data-status="fazendo">
+                        Fazendo
+                    </a>
+                </li>
+                <li class="tabs-widget__item">
+                    <a href="?status=atrasado" class="tabs-widget__link" data-status="atrasado">
+                        Atrasado
+                    </a>
+                </li>
+                <li class="tabs-widget__item">
+                    <a href="?status=concluido" class="tabs-widget__link" data-status="concluido">
+                        Concluído
+                    </a>
+                </li>
+                <li class="tabs-widget__item">
+                    <a href="?status=indefinido" class="tabs-widget__link" data-status="indefinido">
+                        Indefinido
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <?php
+    }
 }

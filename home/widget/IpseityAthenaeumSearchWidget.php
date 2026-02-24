@@ -10,17 +10,18 @@ $layoutValue = $_GET['layout'] ?? null;
                 <div class="search-widget__sidebar_wrapper">
                     <img 
                     src="https://busqe.com/ximages/widget/icons/icon-form-justify-left.png" 
+                    XXXsrc="https://busqe.com/ximages/widget/icons/icon-galery.png" 
                     alt="home" 
                     draggable="false">
                 </div>
             </a> 
         </div>
 
-        <div class="search-widget__logo">
+        <a href="https://busqe.com/sites-dev/labs/ipseitystudios/sistemas/ipseity-athenaeum-sys/home/" class="search-widget__logo">
             <div class="search-widget__logo_text">
                 IPSEITY-ATHENAEUM-SYS
             </div>
-        </div>  
+        </a>  
 
         <div class="search-widget__search">
             <form 

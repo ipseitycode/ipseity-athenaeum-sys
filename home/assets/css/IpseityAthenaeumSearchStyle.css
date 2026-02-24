@@ -73,7 +73,7 @@
     height: 100%;
     padding: 0px 0px;
     overflow: hidden;
-    user-select: none;
+    text-decoration: none;
 }
 
 .search-widget__logo_text {
@@ -222,7 +222,6 @@
         height: 100%;
         padding: 0px 0px;
         overflow: hidden;
-        user-select: none;
     }
 
     .search-widget__logo_text {
