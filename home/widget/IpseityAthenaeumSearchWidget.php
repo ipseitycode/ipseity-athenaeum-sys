@@ -17,16 +17,16 @@ $layoutValue = $_GET['layout'] ?? null;
             </a> 
         </div>
 
-        <a href="https://busqe.com/sites-dev/labs/ipseitystudios/sistemas/ipseity-athenaeum-sys/home/" class="search-widget__logo">
+        <a href="" class="search-widget__logo">
             <div class="search-widget__logo_text">
                 IPSEITY-ATHENAEUM-SYS
             </div>
-        </a>  
+        </a>
 
         <div class="search-widget__search">
             <form 
             class="search-widget__search_bar" 
-            action="https://busqe.com/sites-dev/labs/ipseitystudios/sistemas/ipseity-athenaeum-sys/home/" 
+            action="" 
             method="GET">
 
                 <input 
@@ -44,7 +44,7 @@ $layoutValue = $_GET['layout'] ?? null;
 
                 <button class="search-widget__search_button" type="submit">
                     <img 
-                    src="/ximages/images/widget/medium//icon-search.svg"
+                    src="https://busqe.com/ximages/images/widget/medium//icon-search.svg"
                     draggable="false"  
                     alt="Botao Pesquisar">
                 </button>
