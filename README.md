@@ -49,7 +49,6 @@ Uma playlist completa no YouTube está disponível explicando detalhadamente:
 ## ⚠️ Observação Importante
 
 - O agent segue um padrao de nomeclatura, hierarquia e regras definidas com base em um modelo usado por mim em diversos layouts. Para alterar esse cenario, voce deve alterar o arquivo SKILL.md que se encontra na pasta .agent/skills/layout-creation/
-- O agent apenas escreve dentro dos arquivos existentes — ele não cria estrutura.
 
 ## 👨‍💻 Créditos
 
