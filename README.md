@@ -1,6 +1,6 @@
 # ipseity-athenaeum-sys
 
-[![Playlist YouTube - ipseity-athenaeum-sys](https://img.youtube.com/vi/NJtmT0ITnPI/maxresdefault.jpg)](https://youtube.com/playlist?list=PLz9bzqrAthDmzypbgYuG70aHP5nWx-4pR&si=HjxvEIG3udPVQr4B)
+<!-- [![Playlist YouTube - ipseity-athenaeum-sys](https://img.youtube.com/vi/NJtmT0ITnPI/maxresdefault.jpg)](https://youtube.com/playlist?list=PLz9bzqrAthDmzypbgYuG70aHP5nWx-4pR&si=HjxvEIG3udPVQr4B) -->
 
 ## 🏛️ Por que “ATHENAEUM”?
 
