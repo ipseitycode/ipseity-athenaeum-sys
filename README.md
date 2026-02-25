@@ -24,10 +24,9 @@ O objetivo é transformar imagens ou descrições visuais em layouts profissiona
 
 - 1 - Escolher layout que deseja criar (Tire print)
 - 2 - Faça uma descrição visual do layout e escolha um nome para o layout
-- 3 - Crie a estrutura com o script bash
-- 4 - Envie o prompt com as informações para o antigravity
-- 5 - Adicione as informações do layout no método configurarLayout da classe CONFIGURATION
-- 6 - SEJA FELIZ!
+- 3 - Envie o prompt com as informações para o antigravity
+- 4 - Adicione as informações do layout no método configurarLayout da classe CONFIGURATION
+- 5 - SEJA FELIZ!
 
 ## 🛠️ Tecnologias usadas
 
@@ -41,7 +40,7 @@ O objetivo é transformar imagens ou descrições visuais em layouts profissiona
 Uma playlist completa no YouTube está disponível explicando detalhadamente:
 
 - Como funciona a arquitetura do sistema
-- Como usar script bash para gerar a estrutura de pastas base
+- Como usar scripts para gerar a estrutura de pastas base
 - Como configurar a SKILL
 - Como criar layouts a partir de imagem
 
