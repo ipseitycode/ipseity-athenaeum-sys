@@ -1,6 +1,6 @@
 # ipseity-athenaeum-sys
 
-<!-- [![Playlist YouTube - ipseity-athenaeum-sys](https://img.youtube.com/vi/NJtmT0ITnPI/maxresdefault.jpg)](https://youtube.com/playlist?list=PLz9bzqrAthDmzypbgYuG70aHP5nWx-4pR&si=HjxvEIG3udPVQr4B) -->
+[![Playlist YouTube - ipseity-athenaeum-sys](https://img.youtube.com/vi/kY8aBLPvA6Q/maxresdefault.jpg)](https://youtube.com/playlist?list=PLz9bzqrAthDk9y0wn-6ebZ5T7IlOtqa5b)
 
 ## 🏛️ Por que “ATHENAEUM”?
 
@@ -44,7 +44,7 @@ Uma playlist completa no YouTube está disponível explicando detalhadamente:
 - Como configurar a SKILL
 - Como criar layouts a partir de imagem
 
-**[Acesse a playlist aqui](https://youtube.com/playlist?list=PLz9bzqrAthDmzypbgYuG70aHP5nWx-4pR&si=l8-7HK4brCB9ZbRf)**
+**[Acesse a playlist aqui](https://www.youtube.com/playlist?list=PLz9bzqrAthDk9y0wn-6ebZ5T7IlOtqa5b)**
 
 ## ⚠️ Observação Importante
 
